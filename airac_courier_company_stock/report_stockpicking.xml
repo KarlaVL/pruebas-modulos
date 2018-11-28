@@ -1,0 +1,14 @@
+<odoo>
+    <template id="airac_report_picking" inherit_id="stock.report_picking">
+        <xpath expr="//div[@t-if='o.picking_type_id.code=='incoming' and o.partner_id']" position="replace">
+            <div t-if="o.picking_type_id.code=='incoming' and o.partner_id" class="col-xs-5 col-xs-offset-1">
+                <strong>Partner Addres:</strong>
+                <p t-field="o.picking_type_id.code=='incoming' and o.partner_id" class="col-xs-5 col-xs-offset-1"/>
+            </div>
+            <div t-if="o.x_courier_company" class="col-xs-5 col-xs-offset-1">
+                <strong>Compañía de Envío:</strong>
+                <p t-field="o.x_courier_company"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>
